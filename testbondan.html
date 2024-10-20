@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover and Modal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            padding: 10px;
+            text-align: center;
+        }
+        .image-container:hover .overlay {
+            transform: translateY(0);
+        }
+        .overlay button {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .overlay button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ini buar keluar popupnya */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .modal-content img {
+            max-width: 80%;
+            border-radius: 10px;
+        }
+        
+        /* ini tanda silang di popup */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #000;
+        }
+        .close:hover {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="image-container">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/177/2882/byd-seal-95930.jpg" alt="Image 1">
+            <div class="overlay">
+                <div class="description">ini mobil 1</div>
+                <button onclick="openModal('https://imgcdn.oto.com/medium/gallery/exterior/177/2882/byd-seal-95930.jpg')">View More</button>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/38/2367/toyota-raize-51212.jpg" alt="Image 2">
+            <div class="overlay">
+                <div class="description">ini mobil 2</div>
+                <button onclick="openModal('https://imgcdn.oto.com/medium/gallery/exterior/38/2367/toyota-raize-51212.jpg')">View More</button>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/7/1669/daihatsu-terios-93478.jpg" alt="Image 3">
+            <div class="overlay">
+                <div class="description">ini mobil 3</div>
+                <button onclick="openModal('https://imgcdn.oto.com/medium/gallery/exterior/7/1669/daihatsu-terios-93478.jpg')">View More</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal()">&times;</button>
+            <img id="modalImage" src="" alt="Modal Image">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

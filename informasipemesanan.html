@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAnywhere - Informasi Pemesanan Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-container {
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+         .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #FCA311;
+        }
+        .form-group button {
+            background-color: #FCA311;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #ee980d;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .form-group img {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .form-group input[type="file"] {
+            padding: 3px;
+        }
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .image-preview img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="dashboard">
+            <div class="left-dashboard">
+                <div class="logo">
+                    <img src="assets/logo/logo.svg" alt="">
+                </div>
+                <div class="profile">
+                    <img src="assets/icons/dashoboard/profil.png" alt="">
+                    <h4>Riski Pratama</h4>
+                </div>
+                <div class="list-menu">
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-dashboard-white.svg" alt="">
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="item-menu orange-pesan-mobil">
+                        <img src="assets/icons/dashoboard/icon-pesanmobil-orange.svg" alt="">
+                        <a href="pesanmobil1.html">Pesan Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-daftarmobil-white.svg" alt="">
+                        <a href="daftarmobil.html">Daftar Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-settings-white.svg" alt="">
+                        <a href="setting.html">Setting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-dashboard">
+                <div class="form-container">
+                    <h2>Formulir Informasi Pemesanan</h2>
+                    <form action="informasipembayaran.html">
+                        <div class="form-group">
+                            <label for="namaMobil">Nama Lenkap</label>
+                            <input type="text" id="namaMobil" name="namaMobil" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="noPlat">Email</label>
+                            <input type="text" id="noPlat" name="noPlat" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="warna">No. Telepon</label>
+                            <input type="text" id="warna" name="warna" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggalSewa">Tanggal Sewa</label>
+                            <input type="date" id="tanggalSewa" name="tanggalSewa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggalKembali">Tanggal Kembali</label>
+                            <input type="date" id="tanggalKembali" name="tanggalKembali" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tujuan">Tujuan Sewa</label>
+                            <textarea id="tujuan" name="tujuan" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="identitas">Unggah Identitas (KTP/SIM)</label>
+                            <input type="file" id="identitas" name="identitas" accept="image/*" required>
+                            <img id="previewImage" src="#" alt="Preview Gambar Mobil" style="display:none;">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Sewa Mobil</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('identitas').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const previewImage = document.getElementById('previewImage');
+                previewImage.src = e.target.result;
+                previewImage.style.display = 'block';
+            }
+
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+</html>

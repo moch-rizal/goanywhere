@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>GoAnywhere - Sewa Mobil Mudah dan Nyaman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 90px;
+        }
+        .faq-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .faq-section {
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            background-color: #FCA311;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .faq-question:hover {
+            background-color: #ee980d;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 15px;
+            background-color: #f4f4f4;
+            border-radius: 0 0 5px 5px;
+        }
+        .faq-answer p {
+            padding: 10px 0;
+            margin: 0;
+        }
+        .faq-section.active .faq-answer {
+            max-height: 200px; /* Adjust according to content */
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="lebar-max">
+            <img src="assets/logo/logo.svg" alt="">
+            <div class="menu-navbar">
+                <a href="index.html">Home</a>
+                <a href="cari-mobil.html">Cari Mobil</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="button-login-regis">
+                <div class="button-register">
+                    <a href="register.html">Register</a>
+                </div>
+                <div class="button-login">
+                    <a href="login.html">Login</a>
+                </div>
+            </div>
+            <div class="toggle">
+                &#9776;
+            </div>
+        </div>
+    </header>
+
+    <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <div class="faq-section">
+            <div class="faq-question" onclick="toggleFaq(this)">Apa itu GoANywhere?</div>
+            <div class="faq-answer">
+                <p>goAnywhere adalah webiste yang menyediakan layanan untuk penyewaan mobil. website ini menawarkan seseorang untuk menyewakan mobilnya (Host) dan juga seseorang yang ingin menyewa mobil (Guest)</p>
+            </div>
+        </div>
+        <div class="faq-section">
+            <div class="faq-question" onclick="toggleFaq(this)">Dimana Goanywhere tersedia?</div>
+            <div class="faq-answer">
+                <p>Goanywhere saat ini hanya tersedia atau hanya bisa di akses melalui website</p>
+            </div>
+        </div>
+        <div class="faq-section">
+            <div class="faq-question" onclick="toggleFaq(this)">Apa saja syarat menyewa mobil?</div>
+            <div class="faq-answer">
+                <p>Memiliki Kartu identitas, dan mememiliki Surat Ijin Mengemudi(SIM)</p>
+            </div>
+        </div>
+        <div class="faq-section">
+            <div class="faq-question" onclick="toggleFaq(this)">Bisakah saya Mengubah pesanan?</div>
+            <div class="faq-answer">
+                <p>Pesanan masih bisa diubah dalam waktu 1 jam setelah pembayaran. Setelah periode ini, kami tidak dapat menjamin perubahan karena pesanan mungkin sudah diproses.</p>
+            </div>
+        </div>
+    </div>
+
+      <!-- AWAL FOOTER -->
+    <footer>
+        <div class="footer-section">
+            <div class="left-footer">
+                <img src="assets/logo/logo.svg" alt="">
+                <p>goAnywhere adalah webiste yang menyediakan layanan untuk penyewaan mobil. website ini menawarkan seseorang untuk menyewakan mobilnya (Host) dan juga seseorang yang ingin menyewa mobil (Guest)</p>
+            </div>
+            <div class="mid-footer">
+                <h3>Produk dan Layanan</h3>
+                <a href="host.html">Sewakan Mobil</a>
+                <a href="index.html">Sewa Mobil</a>
+            </div>
+            <div class="right-footer">
+                <h3>Tentang Kami</h3>
+                <a href="index.html">Home</a>
+                <a href="cari-mobil.html">Cari Mobil</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            element.parentElement.classList.toggle('active');
+        }
+    </script>
+    
+</body>
+</html>

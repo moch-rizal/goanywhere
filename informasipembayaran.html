@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAnywhere - Informasi Pembayaran Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+         .payment-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        .payment-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .payment-header h1 {
+            width: 600px;
+            margin: 0;
+            color: #333;
+        }
+        .payment-header p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .payment-method {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .payment-method:hover {
+            background-color: #fffaf0;
+            border-color: #FCA311;
+        }
+        .payment-method input {
+            display: none;
+        }
+        .payment-method label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .payment-method img {
+            width: 40px;
+            height: 40px;
+        }
+        .payment-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .payment-footer button {
+            background-color: #FCA311;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .payment-footer button:hover {
+            background-color: #ee980d;
+        }
+
+        /* Popup styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .popup-header h2 {
+            margin: 0;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .popup-body {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .popup-body button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .popup-body button:hover {
+            background-color: #0056b3;
+        }
+        .popup-footer {
+            margin-top: 20px;
+        }
+        .popup-footer button {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .popup-footer button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="dashboard">
+            <div class="left-dashboard">
+                <div class="logo">
+                    <img src="assets/logo/logo.svg" alt="">
+                </div>
+                <div class="profile">
+                    <img src="assets/icons/dashoboard/profil.png" alt="">
+                    <h4>Riski Pratama</h4>
+                </div>
+                <div class="list-menu">
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-dashboard-white.svg" alt="">
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="item-menu orange-pesan-mobil">
+                        <img src="assets/icons/dashoboard/icon-pesanmobil-orange.svg" alt="">
+                        <a href="pesanmobil1.html">Pesan Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-daftarmobil-white.svg" alt="">
+                        <a href="daftarmobil.html">Daftar Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-settings-white.svg" alt="">
+                        <a href="setting.html">Setting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-dashboard">
+                <div class="payment-container">
+                    <div class="payment-header">
+                        <h1>Metode Pembayaran</h1>
+                        <p>Pilih metode pembayaran yang Anda inginkan</p>
+                    </div>
+                    <form id="paymentForm">
+                        <div class="payment-methods">
+                            <div class="payment-method" onclick="openPopup()">
+                                <input type="radio" id="bankTransfer" name="paymentMethod" value="Transfer Bank">
+                                <label for="bankTransfer">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/bank-building.png" alt="Bank Transfer">
+                                    Transfer Bank
+                                </label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="eWallet" name="paymentMethod" value="E-Wallet">
+                                <label for="eWallet">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/mobile-payment.png" alt="E-Wallet">
+                                    E-Wallet
+                                </label>
+                            </div>
+                        </div>
+                        <div class="payment-footer">
+                            <button type="button" onclick="proceedToConfirmation()">Lanjutkan Pembayaran</button>
+                        </div>
+                    </form>
+                </div>
+            
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <div class="popup-header">
+                            <h2>Pilih Bank</h2>
+                        </div>
+                        <div class="popup-body">
+                            <button onclick="selectBank('BCA')">BCA</button>
+                            <button onclick="selectBank('Mandiri')">Mandiri</button>
+                            <button onclick="selectBank('BNI')">BNI</button>
+                            <button onclick="selectBank('BRI')">BRI</button>
+                        </div>
+                        <div class="popup-footer">
+                            <button onclick="closePopup()">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let selectedBank = '';
+
+        function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function selectBank(bankName) {
+            selectedBank = bankName;
+            document.getElementById('bankTransfer').checked = true;
+            closePopup();
+        }
+
+        function proceedToConfirmation() {
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+            if (paymentMethod) {
+                const url = `confirmation.html?method=${paymentMethod.value}${selectedBank ? '&bank=' + encodeURIComponent(selectedBank) : ''}`;
+                window.location.href = url;
+            } else {
+                alert('Silakan pilih metode pembayaran terlebih dahulu.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pembayaran</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .confirmation-container {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: 50px auto;
+            
+        }
+        .confirmation-header h1 {
+            width: 600px;
+            margin: 0;
+            color: #333;
+        }
+        .confirmation-details {
+            margin: 20px 0;
+            color: #666;
+        }
+        .confirmation-footer button {
+            background-color: #FCA311;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .confirmation-footer button:hover {
+            background-color: #ee980d;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="dashboard">
+            <div class="left-dashboard">
+                <div class="logo">
+                    <img src="assets/logo/logo.svg" alt="">
+                </div>
+                <div class="profile">
+                    <img src="assets/icons/dashoboard/profil.png" alt="">
+                    <h4>Riski Pratama</h4>
+                </div>
+                <div class="list-menu">
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-dashboard-white.svg" alt="">
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="item-menu orange-pesan-mobil">
+                        <img src="assets/icons/dashoboard/icon-pesanmobil-orange.svg" alt="">
+                        <a href="pesanmobil1.html">Pesan Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-daftarmobil-white.svg" alt="">
+                        <a href="daftarmobil.html">Daftar Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-settings-white.svg" alt="">
+                        <a href="setting.html">Setting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-dashboard">
+                <div class="confirmation-container">
+                    <div class="confirmation-header">
+                        <h1>Konfirmasi Pembayaran</h1>
+                    </div>
+                    <div class="confirmation-details">
+                        <p>Metode Pembayaran: <span id="selectedMethod">-</span></p>
+                        <p id="selectedBank" style="display: none;">Bank: <span id="bankName">-</span></p>
+                        <p>Nomor Virtual Account: 210219381265</p>
+                    </div>
+                    <div class="confirmation-footer">
+                        <button onclick="completePayment()">Konfirmasi Pembayaran</button>
+                    </div>
+                </div>
+            </div>
+  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const queryParams = new URLSearchParams(window.location.search);
+            const paymentMethod = queryParams.get('method');
+            const bankName = queryParams.get('bank');
+
+            document.getElementById('selectedMethod').textContent = paymentMethod || 'Tidak ada metode pembayaran yang dipilih';
+            
+            if (paymentMethod === 'Transfer Bank' && bankName) {
+                document.getElementById('selectedBank').style.display = 'block';
+                document.getElementById('bankName').textContent = bankName;
+            }
+        });
+
+        function completePayment() {
+            alert('Pembayaran Anda berhasil dilakukan. Terima kasih!');
+            window.location.href = 'dashboard.html'; // Ganti dengan URL yang sesuai
+        }
+    </script>
+</body>
+</html>

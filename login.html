@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAnywhere - Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+                /* CSS untuk modal */
+        .modal {
+            display: none; /* Sembunyikan modal secara default */
+            position: fixed; /* Tetap di posisi yang sama */
+            z-index: 1; /* Di atas elemen lainnya */
+            left: 0;
+            top: 0;
+            width: 100%; /* Lebar penuh */
+            height: 100%; /* Tinggi penuh */
+            overflow: auto; /* Tambahkan scroll jika diperlukan */
+            background-color: rgb(0,0,0); /* Fallback */
+            background-color: rgba(0,0,0,0.4); /* Latar belakang hitam dengan opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% dari atas dan auto dari sisi */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 400px; /* Lebar modal */
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .success-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #28a745; /* Warna hijau */
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+        }
+
+        .success-icon:before {
+            content: '\2713'; /* Tanda centang */
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .success-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .success-message {
+            margin: 20px 0;
+        }
+
+        .modal-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-button:hover {
+            background-color: #218838;
+        }
+        .form-list > .submit-link:hover {
+            background-color: #FCA311;
+            color: white;
+            transition: ease 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="register">
+            <div class="image-register">           
+            </div>
+            <div class="form-register">
+                <div class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                      </svg>
+                    <a href="index.html">Kembali ke Home</a>
+                </div>
+                <div class="logo"> 
+                    <img src="assets/logo/Logo register.svg" alt="">
+                </div>
+                <div class="title-register">
+                    <h2>Login</h2>
+                </div>
+                <form class="form-list" id="formRegis">
+                        <label for="username" class="label-text">Username</label>
+                        <input type="text" name="username" id="username">
+                        <label for="password" class="label-pass">Password</label>
+                        <input type="password" name="password]" id="password">
+                        <a href="#" class="submit-link">Login</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="success-icon"></div>
+          <div class="success-text">Login Berhasil</div>
+          <p class="success-message">Klik Ok untuk melanjutkan.</p>
+          <button class="modal-button" id="modalOkButton">Ok</button>
+        </div>
+    </div>
+
+    <script>
+        // Menambahkan event listener ke tag <a> untuk mensimulasikan submit form
+        document.querySelector('.submit-link').addEventListener('click', function(e) {
+            e.preventDefault(); // Mencegah tindakan default dari tag <a>
+            
+            // Mengambil form dan memicu submit
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var userFound = false;
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                if (username === key && password === value) {
+                    userFound = true;
+                    break; // Hentikan perulangan jika user ditemukan
+                }
+            }
+            
+            if(userFound === true) {
+                
+                // Dapatkan modal
+                var modal = document.getElementById("myModal");
+                // Dapatkan tombol yang membuka modal
+                var btn = document.getElementById("modalOkButton");
+                // Dapatkan elemen <span> yang menutup modal
+                var span = document.getElementsByClassName("close")[0];
+                // Ketika pengguna mengklik tombol, buka modal 
+                modal.style.display = "block";
+
+                // Ketika pengguna mengklik <span> (x), tutup modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Ketika pengguna mengklik di mana saja di luar modal, tutup modal
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+                // Ketika pengguna mengklik tombol "Ok", arahkan ke halaman berikutnya
+                document.getElementById("modalOkButton").onclick = function() {
+                    window.location.href = "dashboard.html"; // Ganti "nextpage.html" dengan URL halaman berikutnya
+                }
+            }
+            else {
+                alert('Username tidak tersedia atau password salah!');
+            }
+        });
+        
+
+        </script>
+    
+</body>
+</html>

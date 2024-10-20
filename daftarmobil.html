@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAnywhere - Daftar Mobil Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            width: 900px;
+            margin: auto;
+        }
+        .grid-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 300px;
+        }
+        .grid-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .grid-item-details {
+            padding: 15px;
+            text-align: center;
+        }
+        .grid-item-details h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .grid-item-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .grid-item-actions {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        .grid-item-actions a{
+            background-color: #FCA311;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 40%;
+            text-align: center;
+        }
+        .grid-item-actions a:hover {
+            background-color: #ee980d;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div class="dashboard">
+            <div class="left-dashboard">
+                <div class="logo">
+                    <img src="assets/logo/logo.svg" alt="">
+                </div>
+                <div class="profile">
+                    <img src="assets/icons/dashoboard/profil.png" alt="">
+                    <h4>Riski Pratama</h4>
+                </div>
+                <div class="list-menu">
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-dashboard-white.svg" alt="">
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-pesanmobil-putih.svg" alt="">
+                        <a href="pesanmobil1.html">Pesan Mobil</a>
+                    </div>
+                    <div class="item-menu orange-daftar-mobil">
+                        <img src="assets/icons/dashoboard/icon-daftar-mobil-orange.svg" alt="">
+                        <a href="daftarmobil.html">Daftar Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-settings-white.svg" alt="">
+                        <a href="setting.html">Setting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-dashboard">
+                <h1>Daftar Mobil</h1>
+                <div class="button-tambah-mobil">
+                    <a href="form-tambah-mobil.html">Tambah</a>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="https://imgcdn.oto.com/medium/gallery/exterior/177/2882/byd-seal-95930.jpg" alt="Nama Mobil">
+                        <div class="grid-item-details">
+                            <h3>Nama Mobil</h3>
+                            <p>No. Plat: XYZ 1234</p>
+                            <p>Warna: Merah</p>
+                            <p>Bahan Bakar: Bensin</p>
+                            <p>Harga Sewa: Rp. 500.000/hari</p>
+                        </div>
+                        <div class="grid-item-actions">
+                            <a href="edit-mobil.html">Edit</a>
+                            <a href="edit-mobil.html">Hapus</a>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://imgcdn.oto.com/medium/gallery/exterior/14/2482/honda-civic-rs-21189.jpg" alt="Nama Mobil">
+                        <div class="grid-item-details">
+                            <h3>Nama Mobil</h3>
+                            <p>No. Plat: XYZ 1234</p>
+                            <p>Warna: Merah</p>
+                            <p>Bahan Bakar: Bensin</p>
+                            <p>Harga Sewa: Rp. 500.000/hari</p>
+                        </div>
+                        <div class="grid-item-actions">
+                            <a href="edit-mobil.html">Edit</a>
+                            <a href="edit-mobil.html">Hapus</a>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://imgcdn.oto.com/medium/gallery/exterior/3/2950/bmw-i5-38816.jpg" alt="Nama Mobil">
+                        <div class="grid-item-details">
+                            <h3>Nama Mobil</h3>
+                            <p>No. Plat: XYZ 1234</p>
+                            <p>Warna: Merah</p>
+                            <p>Bahan Bakar: Bensin</p>
+                            <p>Harga Sewa: Rp. 500.000/hari</p>
+                        </div>
+                        <div class="grid-item-actions">
+                            <a href="edit-mobil.html">Edit</a>
+                            <a href="edit-mobil.html">Hapus</a>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://imgcdn.oto.com/medium/gallery/exterior/37/2220/suzuki-xl7-12009.jpg" alt="Nama Mobil">
+                        <div class="grid-item-details">
+                            <h3>Nama Mobil</h3>
+                            <p>No. Plat: XYZ 1234</p>
+                            <p>Warna: Merah</p>
+                            <p>Bahan Bakar: Bensin</p>
+                            <p>Harga Sewa: Rp. 500.000/hari</p>
+                        </div>
+                        <div class="grid-item-actions">
+                            <a href="edit-mobil.html">Edit</a>
+                            <a href="edit-mobil.html">Hapus</a>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://imgcdn.oto.com/medium/gallery/exterior/38/387/toyota-hilux-44123.jpg" alt="Nama Mobil">
+                        <div class="grid-item-details">
+                            <h3>Nama Mobil</h3>
+                            <p>No. Plat: XYZ 1234</p>
+                            <p>Warna: Merah</p>
+                            <p>Bahan Bakar: Bensin</p>
+                            <p>Harga Sewa: Rp. 500.000/hari</p>
+                        </div>
+                        <div class="grid-item-actions">
+                            <a href="edit-mobil.html">Edit</a>
+                            <a href="edit-mobil.html">Hapus</a>
+                        </div>
+                    </div>
+                    <!-- Tambahkan grid mobil lain di sini -->
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

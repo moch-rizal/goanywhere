@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAnywhere - Dashboard Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+            .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .activity-section {
+            margin-top: 30px;
+        }
+        .activity-section h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #FCA311;
+            border-bottom: 2px solid #FCA311;
+            padding-bottom: 5px;
+            text-align: left;
+        }
+        .activity-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .activity-card:hover {
+            background-color: #e9ecef;
+        }
+        .activity-card img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .activity-info {
+            flex-grow: 1;
+        }
+        .activity-info h3 {
+            margin: 0;
+            color: #333;
+        }
+        .activity-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+   
+</head>
+<body>
+    <section>
+        <div class="dashboard">
+            <div class="left-dashboard">
+                <div class="logo">
+                    <img src="assets/logo/logo.svg" alt="">
+                </div>
+                <div class="profile">
+                    <img src="assets/icons/dashoboard/profil.png" alt="">
+                    <h4>Riski Pratama</h4>
+                </div>
+                <div class="list-menu">
+                    <div class="item-menu dashboard-orange">
+                        <img src="assets/icons/dashoboard/icon-dashborad-orange.svg" alt="">
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-pesanmobil-putih.svg" alt="">
+                        <a href="pesanmobil1.html">Pesan Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-daftarmobil-white.svg" alt="">
+                        <a href="daftarmobil.html">Daftar Mobil</a>
+                    </div>
+                    <div class="item-menu">
+                        <img src="assets/icons/dashoboard/icon-settings-white.svg" alt="">
+                        <a href="setting.html">Setting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-dashboard">
+                <div class="container">
+                    <h1>Riwayat Aktifitas</h1>
+                    
+                    <div class="activity-section">
+                        <h2>Riwayat Peminjaman</h2>
+                        <div class="activity-card">
+                            <img src="https://imgcdn.oto.com/medium/gallery/exterior/177/2882/byd-seal-95930.jpg" alt="Car Image">
+                            <div class="activity-info">
+                                <h3>Toyota Corolla</h3>
+                                <p>Dipinjam Oleh: Xaviera</p>
+                                <p>Periode Peminjaman: 1 Jan 2024 - 10 Jan 2024</p>
+                            </div>
+                        </div>
+                        <div class="activity-card">
+                            <img src="https://imgcdn.oto.com/medium/gallery/exterior/7/1669/daihatsu-terios-93478.jpg" alt="Car Image">
+                            <div class="activity-info">
+                                <h3>Honda Civic</h3>
+                                <p>Dipinjam Oleh: Yayah</p>
+                                <p>Periode Peminjaman: 15 Feb 2024 - 20 Feb 2024</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="activity-section">
+                        <h2>Riwayat Pinjaman</h2>
+                        <div class="activity-card">
+                            <img src="https://imgcdn.oto.com/medium/gallery/exterior/38/2367/toyota-raize-51212.jpg" alt="Car Image">
+                            <div class="activity-info">
+                                <h3>Ford Mustang</h3>
+                                <p>Dipinjamkan Ke: Xaviera </p>
+                                <p>Periode Pinjaman: 5 Mar 2024 - 15 Mar 2024</p>
+                            </div>
+                        </div>
+                        <div class="activity-card">
+                            <img src="https://imgcdn.oto.com/medium/gallery/exterior/28/2188/mitsubishi-triton-10809.jpg" alt="Car Image">
+                            <div class="activity-info">
+                                <h3>Chevrolet Camaro</h3>
+                                <p>Dipinjamkan Ke: Yayah</p>
+                                <p>Periode Pinjaman: 20 Apr 2024 - 30 Apr 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

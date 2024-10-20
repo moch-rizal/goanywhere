@@ -1,0 +1,1008 @@
+@import url("reset.css");
+
+/* General Style */
+html, body, button {
+    font-family: "Ubuntu";
+    width: 100%;
+}
+
+.button-login a{
+    display: inline-block;
+    color: white;
+    background-color: #FCA311;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50px;
+    transition: ease 0.4s;
+
+}
+
+.button-login a:hover {
+    color: #14213D;  
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 40px 0 60px;
+    text-align: center;
+}
+
+
+
+/* ---------------------- HEADER ---------------------- */
+.lebar-max {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 20px;
+    background-color:#14213D;
+}
+.menu-navbar, .register-daftar {
+    display : none;
+    }
+    
+    .menu-navbar.aktif {
+    display:inline-block;
+    top: 64px;
+    background-color:#14213D;
+    padding: 10px 20px;
+    right: 0;
+    left: 0;
+    }
+    
+    .menu-navbar.aktif a {
+    padding: 10px;
+    display: inline-block !important;
+    }
+
+    .menu-navbar a:hover {
+        color: #FCA311;
+    }
+    
+    .tombol {
+    display: block;
+    }
+
+/*------------- SECTION IMAGE-HOME-CLIENT ----------- */
+
+.homepage-hero {
+    width: 100%;
+    height: 80vh;
+    background-image: url(../assets/img/Client-Page/image-home-client.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+}
+
+.inner-homepage-hero {
+    width: 750px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+}
+
+.inner-homepage-hero h1, .text-hostpage h1 { /* h1  */
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.inner-homepage-hero p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 90px;
+}
+
+/* ---------------- REASON SECTION --------------- */
+
+.reason-list {
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 190px;
+}
+
+.reason-item {
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.reason-item img {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+.reason-item h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.reason-item p {
+    width: 180px;
+    margin: auto;
+}
+
+
+/* --------------- OPTION CAR --------------- */
+.option-car {
+    margin-top: 120px;
+    background-color: #14213D;
+    padding-top: 30px;
+}
+
+.option-car h2 {
+    color: white;
+}
+
+.car-list {
+    width: 300px;
+    margin: auto;
+}
+
+
+.car-item h3 {
+    color: white;
+    position: relative;
+    top: -106px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.car-item .orange-rect {
+    position: relative;
+    width: 278px;
+    top: -63px;
+    left: 8px;
+}
+
+/* -------- INTEREST SECTION ----------- */
+.interest {
+    width: 1200px;
+    display: flex;
+    margin: auto;
+}
+.inner-interest {
+    background-color: #E5E5E5;
+    margin-top: 40px;
+    padding: 40px ;
+    display: flex;
+    border-radius: 30px 30px 0 0;
+}
+
+.left-interest {
+}
+
+.text-interest h2 {
+    margin: 0;
+    margin-bottom: 90px;
+    text-align: left;
+}
+
+.button-interest a{
+    margin-top: 90px;
+    display: inline-block;
+    color: white;
+    background-color: #FCA311;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50px;
+}
+.right-interest img{
+    width: 500px;
+}
+
+/*-------------- FOOTER SECTION-------------- */
+footer {
+    margin-top: 80PX;
+    background-color: #14213D;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer-section {
+    width: 1240px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-footer {
+    width: 500px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.left-footer img {
+    width: 170px;
+}
+
+.left-footer p {
+    color: white;
+}
+
+.mid-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.mid-footer h3, .mid-footer a, .right-footer h3, .right-footer a {
+    color: white;
+}
+
+.mid-footer h3, .right-footer h3 {
+    font-size: 20px;
+}
+
+.mid-footer a, .right-footer a {
+    font-weight: 100;
+}
+
+.right-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* -------------------------------------------- */
+/* ------------------HOST PAGE----------------- */
+/* -------------------------------------------- */
+
+.hostpage-hero{
+    /* background-color: aquamarine; */
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+    padding-left: 30px;
+}
+
+.inner-hostpage-hero {
+    display: flex;
+}
+
+.left-hostpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.text-hostpage h1{
+    margin-bottom: 100px;
+}
+
+.button-hostpage a {
+    background-color: white;
+    color: #FCA311;
+    padding: 15px 20px;
+    border: 2px solid #FCA311;
+}
+
+.button-hostpage a:hover {
+    background-color: #FCA311;
+    color: white;
+}
+
+
+.car-hostpage {
+    position: absolute;
+    top: 160px;
+    right: 100px;
+}
+.orange-hostpage {
+    height: 90vh;
+}
+
+/* Section Why Rent */
+
+/* .why-rent {
+} */
+
+.rect-why-rent img {
+    width: 100%;
+}
+
+.list-why-rent {
+    display: flex;
+    justify-content: space-around;
+    width: 1080px;
+    margin: auto;
+    position: relative;
+    top: -110px;
+    font-family: "Kelly Slab";
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Section How Rent */
+.list-how-rent {
+    position: relative;
+    top: -44px;
+}
+.row-how-rent {
+    width: 880px;
+    height: 6px;
+    background-color: #14213D;
+    margin-left: 220px;
+}
+
+.icon-how-rent {
+    width: 1160px;
+    display: flex;
+    margin-left: 86px;
+    margin-bottom: 20px;
+}
+
+.icon-how-rent img {
+    width: 80px;
+    margin: auto;
+}
+
+.list-text-how-rent {
+    width: 1160px;
+    display: flex;
+    margin-left: 180px;
+}
+
+.list-text-how-rent .text-how-rent {
+    width: 260px;
+    margin: 0 auto;
+}
+
+.text-how-rent h3 {
+    margin-bottom: 10px;
+}
+
+.text-how-rent p {
+    font-weight: 100;
+    text-align: justify;
+}
+
+/* Section Interest Rent */
+.interest-rent-section {
+    background-image: url("../assets/img/host/cta.svg");
+    width: 1334px;
+    height: 330px;
+    margin: auto;
+}
+
+.interest-rent  {
+    width: 500px;
+    padding-top: 14px;
+    padding-left: 30px;
+}
+
+.interest-rent h2 {
+    text-align: left;
+    color: white;
+}
+
+.interest-rent a{
+    margin-top: 30px;
+    display: inline-block;
+    color: white;
+    background-color: #FCA311;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50px;
+}
+
+/* ----------------------------------- */
+/* ----------------------REGISTER PAGE ----------------  */
+/* -------------------------------- */
+.register {
+    display: flex;
+}
+.image-register {
+    background-image: url(../assets/img/register/car-daftar.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width:900px;
+}
+
+.form-register {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.back-button {
+    display: flex;
+    justify-content: left;
+    width: 500px;
+    margin-left: 70px;
+    margin-bottom: 40px;
+}
+.back-button > a, svg {
+    margin-right: 4px;
+    color: #FCA311;
+    font-size: 18px;
+    transition: ease 0.9s;
+}
+
+.back-button svg {
+    margin-top: 2px;
+}
+
+.back-button:hover  a, .back-button:hover svg {
+    transition: ease 0.3s;
+    color: #14213D;
+}
+
+
+/* .title-register, .form-list {
+    margin: auto;
+} */
+
+.title-register h2 {
+    width: 410px;
+    text-align: left;
+}
+
+
+.label-text, .label-pass {
+    display: block;
+    margin-bottom: 14px;
+}
+
+
+.form-list input {
+    margin-bottom: 20px;
+    height: 40px;
+    width: 400px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    display: block;
+}
+
+.form-list a {
+    margin-top: 30px;
+    display: inline-block;
+    color: #FCA311;
+    border: 2px solid #FCA311;
+    width: 400px;
+    padding-left: 10px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50px;
+}
+
+/* ------------------------------------- */
+/* Register 2 */
+/* ------------------------------------- */
+.input-name {
+    width: 413px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-name input {
+    width: 170px;
+}
+
+/* ------------------------- */
+/* Dashboard Page */
+/* ------------------------- */
+.dashboard {
+    display: flex;
+}
+.left-dashboard {
+    position: fixed;
+    width: 20%;
+    color: white;
+    background-color: #14213D;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-dashboard .logo {
+    margin: 30px auto;
+}
+
+.logo img {
+    width: 190px;
+}
+
+.profile {
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding: 30px 0 30px 40px;
+    display: flex;
+}
+
+.profile h4 {
+    padding-top:25px;
+    padding-left: 20px;
+    font-weight: 100;
+}
+
+.list-menu {
+    padding-top: 80px;
+    padding-left: 40px;
+
+}
+
+.item-menu {
+    margin-bottom: 24px;
+    display: flex;
+}
+.item-menu img{
+    margin-right: 24px;
+}
+
+.item-menu a {
+    font-size: 20px;
+    line-height: 30px;
+    color: inherit;
+}
+
+/* Pesan Mobil Page */
+.right-dashboard {
+    margin-left: 20%;
+    width: 100%;
+}
+
+
+
+.order-car {
+    width: 910px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.order-car-item {
+    width: 290px;
+    height: 400px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    background-color: #ECECEC;
+    overflow: hidden;
+}
+
+.order-car-item h3 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.order-car-item > img {
+    display: block;
+    margin: auto;
+    width: 290px;
+}
+
+.specs-car {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.specs-car img {
+    display: block;
+    margin: 4px auto;
+}
+
+
+.view-car {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.view-car a{
+    display: inline-block;
+    color: white;
+    background-color: #FCA311;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50px;
+}
+
+.view-car a:hover{
+    background-color: #ee980d;
+}
+
+.view-car h4 {
+    color: black;
+    font-size: 18px;
+}
+
+/* ------------------------ */
+/* Page Detail Pesan Mobil */
+/* -------------------------- */
+.right-dashboard h1 {
+    width: 1000px;
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 40px 0;
+}
+
+.details-car {
+    /* margin-left: 70px; */
+    display: flex;
+    justify-content: center;
+}
+
+.detail-car-specs {
+    width: 310px;
+    margin-left: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.detail-car-specs h2 {
+    line-height: 46px;
+    font-size: 28px;
+    margin: 0;
+    text-align: left;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.detail-car-specs h4 {
+    color: #cdcdcd;
+    font-weight: 100;
+    margin-bottom: 16px;
+}
+
+.car-specs-top {
+    display: flex;
+    background-color: #14213D;
+    flex-direction: column;
+    padding: 15px 20px;
+    height: 100px;
+    margin-bottom: 16px;
+}
+
+.rating svg {
+    color: #ffdb0c;
+    margin-right: 3px;
+}
+
+.rating{
+    display: flex;
+    color: white;
+}
+
+.specs-list {
+    margin-bottom: 20px;
+}
+
+.specs-item {
+    display: flex;
+    padding-left: 20px;
+    margin-bottom: 14px;
+}
+
+.specs-item svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    color: #14213D;
+}
+
+.specs-item h5 {
+    line-height: 20px;
+}
+
+.specs-list .button-sewa a{
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    margin: auto;
+    color: white;
+    background-color: #FCA311;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+}
+
+.specs-list .button-sewa a:hover {
+    background-color: #ee980d;
+}
+.button-sewa a:visited {
+    color: white;
+}
+
+.specs-price {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.specs-price > .price-bold{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.specs-price 
+
+
+.detail-information {
+    color: black;
+    padding-top: 30px;
+    padding-left: 100px;
+}
+
+.detail-information h1 {
+    height: 0px;
+    font-size: 22px;
+}
+
+.detail-information h1:nth-child(odd) {
+}
+
+/* ---------------------- */
+/* Informasi Pemesanan  */
+/* -------------------- */
+
+
+.informasi-pemesanan {
+    color: black;
+}
+
+.list-form {
+    width: 600px;
+    padding-left: 70px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-right: 30px;
+}
+
+.item-form label {
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.item-form input {
+    height: 28px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    margin-bottom: 12px;
+}
+
+.list-form-single {
+    padding-left: 88px;
+}
+
+.pesan {
+    margin-top: 40px;
+    margin-left: 88px;
+}
+
+/*  */
+/* Page Informasi Pembayaran */
+/*  */
+.total-item {
+    padding-left: 70px;
+    width: 1000px;
+    color: black;
+}
+
+.desc-total {
+    height: 40px;
+    width: 1000px;
+    display: flex;
+}
+.desc-total h3 {
+    border: 1px solid;
+    width: 700px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+.desc-total:nth-child(even) {
+    background-color: #ECECEC;
+}
+
+.metode-bayar {
+    margin-top: 30px;
+}
+
+/* ---------------- */
+/* Page Tambah Mobil */
+/* ------------------- */
+.button-tambah-mobil a{
+    margin: 26px 110px;
+    display: inline-block;
+    color: white;
+    background-color: #FCA311;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+/*  */
+/* Form Tambah Mobil */
+/*  */
+.item-form .form-file {
+    height: 28px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-width: 0;
+    padding: 10px;
+}
+
+.single-form {
+    margin-top: 20px;
+}
+
+/*  */
+/* List Profile */
+/*  */
+.list-profile {
+    margin-left: 70px;
+}
+.list-profile a {
+    margin: 40px;
+    display: inline-block;
+    color: white;
+    background-color: #FCA311;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.title-cari-mobil h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 70px;
+}
+
+
+
+.list-filter-cari-mobil {
+    margin: auto;
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list-filter-cari-mobil h3 {
+    font-size: 20px;
+}
+
+.list-filter-cari-mobil h3:first-child {
+    color: #FCA311;
+    border-bottom: 2px solid #FCA311;
+}
+
+
+.orange-pesan-mobil, .orange-daftar-mobil, .dashboard-orange, .setting-orange {
+    color: #FCA311;
+}
+
+/**************RESPONSIVE ***************/
+
+@media( min-width: 600px) {
+    /* Navbar */
+    .menu-navbar, .register-daftar {
+        display : block;
+        }
+    .navbar {
+        background-color: #14213D;
+        display: flex;
+        justify-content: center;
+    }
+    .lebar-max {
+        width: 1440px;
+        background-color: inherit;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 16px 0;
+    }
+    .button-login-regis {
+        display: flex;
+    }
+    .button-register {
+        margin-right: 10px;
+    }
+    .button-register a {
+        background-color: white;
+        color: #FCA311;
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50px;
+        transition: ease 0.4s;
+    }
+    .button-register a:hover{
+        background-color: #FCA311;
+        color: white;
+    }
+    
+    .navbar img {
+        width: 170px;
+    }
+    
+    
+    .menu-navbar a {
+        margin-left: 20px;
+        color: white;
+    }
+    
+    .menu-navbar {
+        margin-right: 220px;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    /* reason */
+    .reason-list {
+        max-width: 1200px;
+        display: flex;
+
+    }
+    .reason-item {
+        height: 130px;
+    }
+    .car-list {
+        display: flex;
+        width: 1060px;
+    }
+    .car-item .car-img , .car-item h3 {
+        width: 220px;
+    }
+    
+    .car-item .orange-rect {
+        position: relative;
+        width: 209px;
+        top: -48px;
+        left: 5px;
+    }
+
+    .car-item h3 {
+        color: white;
+        position: relative;
+        top: -86px;
+        font-size: 32px;
+        text-align: center;
+    }
+
+
+}
+
+i {
+    background-color: #14213D;
+    color: #FCA311;
+    background-color: #ee980d;
+
+}

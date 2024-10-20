@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAnywhere - Cari Mobil Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+         .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            width: 800px;
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            background-color: #FCA311;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .filter-buttons button.active {
+            background-color: #ee980d;
+        }
+        .filter-buttons button:hover {
+            background-color: #ee980d;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover {
+            transition: .4s;
+            transform: translateY(-5px);
+            box-shadow: 0 7px 10px rgba(0, 0, 0, 0.35);
+        }
+    </style>
+</head>
+<body>
+     <!-- NAVBAR -->
+     <header class="navbar">
+        <div class="lebar-max">
+            <img src="assets/logo/logo.svg" alt="">
+            <div class="menu-navbar">
+                <a href="index.html">Home</a>
+                <a href="cari-mobil.html">Cari Mobil</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+             <div class="button-login-regis">
+                <div class="button-register">
+                    <a href="register.html">Register</a>
+                </div>
+                <div class="button-login">
+                    <a href="login.html">Login</a>
+                </div>
+            </div>
+            <div class="toggle">
+                &#9776;
+            </div>
+        </div>
+    </header>
+
+    <div class="title-cari-mobil">
+        <h1>Pilihan Kendaraan Untuk Anda</h1>
+    </div>
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterCars('all')">All</button>
+        <button class="filter-btn" onclick="filterCars('sedan')">Sedan</button>
+        <button class="filter-btn" onclick="filterCars('suv')">SUV</button>
+        <button class="filter-btn" onclick="filterCars('mpv')">MPV</button>
+        <button class="filter-btn" onclick="filterCars('pickup')">Pick-up</button>
+    </div>
+
+    
+    <div class="order-car">
+        <div class="order-car-item product-card" data-category="sedan" data-brand="others">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/177/2882/byd-seal-95930.jpg" alt="">
+            <h3 class="product-name">BYD Seal</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="sedan" data-brand="others">
+            <img src="https://imgcdn.oto.com/large/gallery/exterior/139/2604/mg-5-gt-front-angle-low-view-887802.jpg" alt="">
+            <h3 class="product-name">MG 5 GT</h3>
+
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="mpv" data-brand="suzuki">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/37/2220/suzuki-xl7-12009.jpg" alt="">
+            <h3 class="product-name">Suzuki XL7</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="suv" data-brand="toyota">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/38/2367/toyota-raize-51212.jpg" alt="">
+            <h3 class="product-name">Toyota Raize SUV</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="suv" data-brand="daihatsu">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/7/1669/daihatsu-terios-93478.jpg" alt="">
+            <h3 class="product-name">Daihatsu Terios SUV</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="pickup" data-brand="mitsubishi">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/28/2188/mitsubishi-triton-10809.jpg" alt="">
+            <h3 class="product-name">Mitsubishi Triton</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="sedan" data-brand="honda">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/14/2482/honda-civic-rs-21189.jpg" alt="">
+            <h3 class="product-name">Honda Civic RS</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="pickup" data-brand="toyota">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/38/387/toyota-hilux-44123.jpg" alt="">
+            <h3 class="product-name">Toyota Hilux</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+        <div class="order-car-item product-card" data-category="mpv" data-brand="daihatsu">
+            <img src="https://imgcdn.oto.com/medium/gallery/exterior/7/2234/daihatsu-sigra-95867.jpg" alt="">
+            <h3 class="product-name">Daihatsu Sigra</h3>
+            <div class="specs-car">
+                <img src="assets/icons/pesan-mobil/icon-seats.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Bensin.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Type.svg" alt="">
+                <img src="assets/icons/pesan-mobil/icon-Tahun.svg" alt="">
+            </div>
+            <div class="view-car">
+                <a href="register.html">Sewa</a>
+                <h4>300rb/hari</h4>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- AWAL FOOTER -->
+    <footer>
+        <div class="footer-section">
+            <div class="left-footer">
+                <img src="assets/logo/logo.svg" alt="">
+                <p>goAnywhere adalah webiste yang menyediakan layanan untuk penyewaan mobil. website ini menawarkan seseorang untuk menyewakan mobilnya (Host) dan juga seseorang yang ingin menyewa mobil (Guest)</p>
+            </div>
+            <div class="mid-footer">
+                <h3>Produk dan Layanan</h3>
+                <a href="host.html">Sewakan Mobil</a>
+                <a href="index.html">Sewa Mobil</a>
+            </div>
+            <div class="right-footer">
+                <h3>Tentang Kami</h3>
+                <a href="index.html">Home</a>
+                <a href="cari-mobil.html">Cari Mobil</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function filterCars(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(button => {
+                if(button.textContent.toLowerCase() === category) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            cards.forEach(card => {
+                card.style.display = category === 'all' || card.getAttribute('data-category') === category ? 'block' : 'none';
+            });
+        }
+    </script>
+    
+</body>
+</html>

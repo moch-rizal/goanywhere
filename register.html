@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAnywhere - Register Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-list > .submit-link:hover {
+            background-color: #FCA311;
+            color: white;
+            transition: ease 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="register">
+            <div class="image-register">           
+            </div>
+            <div class="form-register">
+                <div class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                      </svg>
+                    <a href="index.html">Kembali ke Home</a>
+                </div>
+                <div class="logo"> 
+                    <img src="assets/logo/Logo register.svg" alt="">
+                </div>
+                <div class="title-register">
+                    <h2>Daftar</h2>
+                </div>
+                <form class="form-list" id="formRegis">
+                        <label for="username" class="label-text">Username</label>
+                        <input type="text" name="username" id="username">
+                        <label for="password" class="label-pass">Password</label>
+                        <input type="password" name="password" id="password">
+                        <a href="#" class="submit-link">Next</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Menambahkan event listener ke tag <a> untuk mensimulasikan submit form
+        document.querySelector('.submit-link').addEventListener('click', function(e) {
+            e.preventDefault(); // Mencegah tindakan default dari tag <a>
+            
+            // Mengambil form dan memicu submit
+            document.getElementById('formRegis').submit();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var userFound = false;
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                if (username === key) {
+                    userFound = true;
+                    break; // Hentikan perulangan jika user ditemukan
+                }
+            }
+            
+            if(userFound === true) {
+                alert('username sudah ada, ganti yang lain!');
+            }
+            else {
+                localStorage.setItem(username, password);
+                window.location.href ='register2.html';
+            }
+        });
+
+        </script>
+</body>
+</html>
